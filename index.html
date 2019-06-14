@@ -1,0 +1,327 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Tackling Training Needs with Open edX</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+				<h2>Tackling Training Needs with Open edX</h2>
+				<small>Alex Juarez / <a href="https://twitter.com/mralexjuarez" target="_blank">@mralexjuarez</a></small>
+				</section>
+
+				<section>
+				<h2>Agenda</h2>
+				<ul>
+					<li>What and Why of Open edX</li>
+					<li>Deploying Open edX</li>
+					<li>LMS / CMS Demo</li>
+					<li>Day 2 - Operations</li>
+					<li>Problems and Such</li>
+					<li>Learning Resources</li>
+					<li>Review</li>
+				</ul>
+				</section>
+
+<!-- Section Break -->
+				<section>
+				<h2>What and Why of Open edX</h2>
+				</section>
+
+				<section>
+				<h2>edX.org</h2>
+
+				<p>We can not talk about Open edX without talking about <a href="https://edx.org" target="_blank">edx.org</a> first.</p>
+				<p><a href="https://open.edx.org/about-open-edx/" target="_blank">edX.org</a> is the online learning destination founded by Harvard and MIT in 2012</p>
+				<small><a href="https://open.edx.org/about-open-edx/" target="_blank">https://open.edx.org/about-open-edx/</a></small>
+				</section>
+
+				<section>
+				<h2>Open edX?</h2>
+
+				<p>Open edX is the platform is made up of a LMS and a CMS</p>
+				<ul>
+					<li>LMS (Open edX) - Learning Management System</li>
+					<li>CMS (Studio X) - Content Management System</li>
+				</ul>
+				</section>
+
+				<section>
+				<h2>Employee Onboarding</h2>
+				<p>The year is 2017 and we are revamping / ramping up our onboarding process.</p>
+				<p>We had a solution, and it was only after using it that we decided we wanted something else.</p>
+				</section>
+
+				<section>
+				<h2>Our Objectives</h2>
+				<ul>
+					<li>Have a consistent onboarding process</li>
+					<li>Be able to offer a self-service solution</li>
+					<li>Courses need to be easy to modify / update.</li>
+				</ul>
+				</section>
+
+				<section>
+				<h2>Open edX Benifets (for us)</h2>
+				<ul>
+					<li>Easy to Try it Out</li>
+					<li>Easy Course Authoring</li>
+					<li>Self Paced Courses</li>
+					<li>Third-Party Intergration</li>
+				</ul>
+				</section>
+
+<!-- Section Break -->
+				<section>
+				<h2>Deploying Open edX</h2>
+				<hr/>
+					<ol>
+						<li>Letting Somebody Else Do It</li>
+						<li>Doing It Yourself</li>
+					</ol>
+				</section>
+
+				<section>
+				<h2>Letting Somebody Else Do It</h2>
+				<p>Open edX has Service Partners that offer 30 Day Trials</p>
+
+				<p>
+					<a href="https://open.edx.org/get-started/" target="_blank">https://open.edx.org/get-started/</a>
+				</p>
+				</section>
+
+				<section>
+				<h2>Doing It Yourself</h2>
+				<p>But doesn't self-hosted just sound more fun?</p>
+				<ul>
+					<li><a href="https://openedx.atlassian.net/wiki/spaces/OpenOPS/pages/60227779/Open+edX+Installation+Options" target="_blank">Source Code</a></li>
+					<li><a href="https://bitnami.com/stack/edx" target="_blank">bitnami</a></li>
+				</section>
+
+				<section>
+				<h2>Install from Source!</h2>
+				<p>
+					<a href="https://openedx.atlassian.net/wiki/spaces/OpenOPS/pages/146440579/Native+Open+edX+Ubuntu+16.04+64+bit+Installation" target="_blank">Native Open edX Ubuntu 16.04 64 bit Installation</a>
+					<ul>
+						<li>Update the system</li>
+						<li>Choose a release</li>
+						<li>Create a config.yml</li>
+						<li>Bootstrap the Ansible Installation</li>
+						<li>Generate Random Passwords</li>
+						<li>Install Open edX via Ansible</li>
+					</ul>
+				</section>
+
+
+				<section>
+				<h2>So about last night...</h2>
+				<p>Turns out somewhere along the line pyOpenSSL needs to be upgraded...I didn't find that out till 2:35AM..last night.</p>
+				</section>
+
+<!-- Section Break -->
+				<section>
+				<h2>LMS / CMS Demo</h2>
+				</section>
+
+				<section>
+					<h2>Exploring the LMS</h2>
+						<ul>
+							<li>User Registration</li>
+							<li>Exploring Courses</li>
+							<li>Course Progress</li>
+						</ul>
+				</section>
+
+				<section>
+				<h2>User Registration</h2>
+				<ul>
+					<li><a href="https://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/configuration/tpa/index.html" target="_blank">Supports Third-Party Auth</a></li>
+					<li><a href="https://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/configuration/customize_registration_page.html?highlight=registartion%20form#" target="_blank">Supports Custom Fields</a></li>
+					<li>Most default fields can be hidden or optional</li>
+				</ul>
+				</section>
+
+				<section>
+				<h2>Exploring Coureses</h2>
+				</section>
+
+				<section>
+				<h2>Course Progress</h2>
+				</section>
+
+				<section>
+				<h2>Exploring the CMS</h2>
+				<ul>
+					<li>Creating a Course Outline</li>
+					<li>Modifying Coruse Options</li>
+					<li>Reporting / Gradebook</li>
+				</ul>
+				</section>
+
+<!-- Section Break -->
+				<section>
+				<h2>Day 2 Operations</h2>
+				<ul>
+					<li>Updating Nginx</li>
+					<li>Configuring Sites</li>
+					<li>Restarting Services</li>
+					<li>Course Backups</li>
+				</ul>
+				</section>
+
+				<section>
+				<h2>Updating Nginx</h2>
+				<p>By default the Studio software runs on 18010</p>
+				<p>Simply changing the listen directive to 80 will allow us to run on a sub-domain of our primary domain.</p>
+				</section>
+
+				<section>
+				<h2>Configuring Sites</h2>
+<pre><code>{
+  "course_email_from_addr":"courses@online.unsupported.io",
+  "university":"Online University",
+  "PLATFORM_NAME":"Online Demo Program",
+  "email_from_address":"courses@online.unsupported.io",
+  "SITE_NAME":"online.unsupported.io",
+  "site_domain":"online.unsupported.io",
+  "SESSION_COOKIE_DOMAIN":"online.unsupported.io",
+  "platform_name":"online.unsupported.io"
+}</code></pre>
+				</section>
+
+				<section>
+				<h2>Restarting Services</h2>
+				<ul>
+					<li>LMS - sudo /edx/bin/supervisorctl restart lms</li>
+					<li>CMS - sudo /edx/bin/supervisorctl restart cms</li>
+					<li>Workers - sudo /edx/bin/supervisorctl restart edxapp_worker:</li>
+				</ul>
+				</section>
+
+				<section>
+				<h2>Course Backups</h2>
+				<p>I learned the hardware it's a good idea to start backing up coureses</p>
+				<a href="" target="_blank">Backup Script</a>
+				</section>
+
+<!-- Section Break -->
+				<section>
+				<h2>Points of Concern</h2>
+				<p>Just some things we are thinking about. In actuality this may or may not work for your group.</p>
+				</section>
+
+				<section>
+				<h2>Runs on Ubuntu 16.04</h2>
+				</section>
+
+				<section>
+				<h2>Reporting</h2>
+				<p>The base reporting does a good job for coures, getting grades etc.</p>
+				<p><a href="https://openedx.atlassian.net/wiki/spaces/OpenOPS/pages/43385371/edX+Analytics+Installation">Insights Analytics</a> looks promising</p>
+				</section>
+
+				<section>
+				<h2>Technology Stack</h2>
+				<ul>
+					<li>Nginx</li>
+					<li>MySQL</li>
+					<li>MongoDB</li>
+					<li>Memcached</li>
+					<li>Postfix</li>
+				</ul>
+				</section>
+
+<!-- Section Break -->
+				<section>
+				<h2>Learning Resources</h2>
+					<ul>
+						<li><a href="https://docs.bitnami.com/general/apps/edx/" target="_blank">Bitnami</a></li>
+						<li><a href="https://docs.edx.org" target="_blank">edx.org Docs</a></li>
+						<li><a href="https://www.edx.org/course/edx101-overview-creating-edx-course-edx-edx101" target="_blank">edx.org Courses</a></li>
+					</ul>
+				</section>
+
+<!-- Section Break -->
+				<section>
+				<h2>Review</h2>
+					<ul>
+						<li>Went over what edX is and why we are using it.</li>
+						<li>Explained options to run your own instance</li>
+						<li>Explored the CMS/LMS Interfaces</li>
+						<li>Dug in to Day 2 Steps and Admin Commands</li>
+						<li>Highlighted Resources</li>
+						<li>Discussed some of the Points of Concern</li>
+					</ul>
+				</section>
+<!-- Section Break -->
+				<section>
+	           <h2>Contact Information</h2>
+	           <div id="hcard-Alex-Juarez" class="vcard">
+	            <a class="url fn" href="http://unsupported.io">Alex Juarez</a>
+	            <div class="org">Linux Principal Engineer at Rackspace</div>
+	            <a class="email" href="mailto:alex.juarez@rackspace.com">alex.juarez@rackspace.com</a>
+	           <div><span class="category">twitter: <a href="http://www.twitter.com/mralexjuarez" target="_blank">@mralexjuarez</a></span></div><p style="font-size:smaller;">This <a href="http://microformats.org/wiki/hcard" target="_blank">hCard</a> created with the <a href="http://microformats.org/code/hcard/creator" target="_blank">hCard creator</a>.</p>
+	           </div>
+	         </section>
+					<section>
+							<h2>Q &amp; A</h2>
+							<p>Or we can talk about whiskey</p>
+							<img src="http://0f7e4b6f48f01603dbf0-798ceaca68548b7d94e5a0f7efc280b5.r85.cf5.rackcdn.com/whiskey.jpg" class="plain"/>
+					</section>
+					<section>
+							<h2>Cat Tax!</h2>
+							<img src="http://0f7e4b6f48f01603dbf0-798ceaca68548b7d94e5a0f7efc280b5.r85.cf5.rackcdn.com/ziggy.png" class="plain" style="float: left; max-width:45%"/>
+							<img src="http://0f7e4b6f48f01603dbf0-798ceaca68548b7d94e5a0f7efc280b5.r85.cf5.rackcdn.com/moscow.png" class="plain" style="float: right; max-width:45%"/>
+					</section>
+				<section>
+				<h2>Thank You!</h2>
+			</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+		<!-- Modified to include the code for Multiplexing -->
+		<script>
+				// More info about config & dependencies:
+				// - https://github.com/hakimel/reveal.js#configuration
+				// - https://github.com/hakimel/reveal.js#dependencies
+				Reveal.initialize({
+					multiplex: {
+						// Example values. To generate your own, see the socket.io server instructions.
+						secret: '', // null so the clients do not have control of the master presentation
+						id: 'c412dc9dd1f593ba', // id, obtained from socket.io server
+						url: 'http://podium.unsupported.io' // Location of socket.io server
+					},
+					dependencies: [
+						{ src: 'plugin/markdown/marked.js' },
+						{ src: 'plugin/markdown/markdown.js' },
+						{ src: 'plugin/notes/notes.js', async: true },
+						{ src: 'plugin/highlight/highlight.js', async: true },
+						{ src: '//cdn.socket.io/socket.io-1.3.5.js', async: true },
+						{ src: 'plugin/multiplex/client.js', async: true },
+	          { src: 'plugin/multiplex/master.js', async: true },
+					]
+				});
+			</script>
+	</body>
+</html>
