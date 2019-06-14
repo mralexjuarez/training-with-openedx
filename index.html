@@ -144,6 +144,19 @@
 				</section>
 
 				<section>
+				<h2>Adding an Admin User</h2>
+				<p>Adding a user</p>
+				<pre><code class="shell">sudo su edxapp -s /bin/bash && cd
+/edx/bin/python.edxapp /edx/bin/manage.edxapp \
+lms manage_user staff staff@example.com \
+ --staff --superuser --settings=production</code></pre>
+				<p>Setting the Password</p>
+				<pre><code>cd /edx/app/edxapp/edx-platform
+sudo -u www-data /edx/bin/python.edxapp ./manage.py lms \
+--settings production changepassword user</code></pre>
+				</section>
+
+				<section>
 					<h2>Exploring the LMS</h2>
 						<ul>
 							<li>User Registration</li>
@@ -187,6 +200,8 @@
 					<li>Restarting Services</li>
 					<li>Course Backups</li>
 				</ul>
+				<br/>
+				<small><a href="https://openedx.atlassian.net/wiki/spaces/OpenOPS/pages/60227913/Managing+OpenEdX+Tips+and+Tricks">Managing the Server</a></small>
 				</section>
 
 				<section>
@@ -221,7 +236,7 @@
 				<section>
 				<h2>Course Backups</h2>
 				<p>I learned the hardware it's a good idea to start backing up coureses</p>
-				<a href="" target="_blank">Backup Script</a>
+				<a href="https://github.com/mralexjuarez/training-with-openedx	" target="_blank">Backup Script</a>
 				</section>
 
 <!-- Section Break -->
